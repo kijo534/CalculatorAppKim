@@ -9,52 +9,110 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Double previousNum;
-    TextView num1TV, num2TV, answerTV;
+    TextView num1TV, num2TV, answerTV, opTV;
     String previewNum;
+
+    boolean numState;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         num1TV = findViewById(R.id.num1);
         num2TV = findViewById(R.id.num2);
+        opTV = findViewById(R.id.op);
         answerTV = findViewById(R.id.answer);
         previewNum = "";
-
+        numState = false;
 
     }
 
     public void add(View view){
-        // use an if statment to see if text is empty .equals("") OR
-        // try catch block
-        
+        if (numState == false) {
+            num1TV.setText(previewNum);
             previewNum = "";
-
+            numState = true;
+            answerTV.setText(previewNum);
+            num2TV.setText("");
+            opTV.setText("+");
+        }
+        else{
+            num2TV.setText(previewNum);
+            previewNum = "";
+            numState = false;
+            answerTV.setText(previewNum);
+        }
 
 
     }
     public void multiply(View view){
-        double num1 = Double.parseDouble(num1TV.getText().toString());
-        double num2 = Double.parseDouble(num2TV.getText().toString());
-        String answer = String.valueOf((num1 * num2));
-        answerTV.setText(answer);
+        if (numState == false) {
+            num1TV.setText(previewNum);
+            previewNum = "";
+            numState = true;
+            answerTV.setText(previewNum);
+            num2TV.setText("");
+            opTV.setText("X");
+        }
     }
     public void subtract(View view){
-        TextView num1TV = findViewById(R.id.num1);
-        double num1 = Double.parseDouble(num1TV.getText().toString());
-        TextView num2TV = findViewById(R.id.num2);
-        double num2 = Double.parseDouble(num2TV.getText().toString());
-        TextView answerTV = findViewById(R.id.answer);
-        String answer = String.valueOf((num1 - num2));
-        answerTV.setText(answer);
+        if (numState == false) {
+            num1TV.setText(previewNum);
+            previewNum = "";
+            numState = true;
+            answerTV.setText(previewNum);
+            num2TV.setText("");
+            opTV.setText("-");
+        }
     }
     public void divide(View view){
-        TextView num1TV = findViewById(R.id.num1);
-        double num1 = Double.parseDouble(num1TV.getText().toString());
-        TextView num2TV = findViewById(R.id.num2);
-        double num2 = Double.parseDouble(num2TV.getText().toString());
-        TextView answerTV = findViewById(R.id.answer);
-        String answer = String.valueOf((num1 / num2));
-        answerTV.setText(answer);
+        if (numState == false) {
+            num1TV.setText(previewNum);
+            previewNum = "";
+            numState = true;
+            answerTV.setText(previewNum);
+            num2TV.setText("");
+            opTV.setText("/");
+        }
+    }
+
+    public void equals(View v){
+        String operator = opTV.getText().toString();
+        if(operator.equals("+")){
+            num2TV.setText(previewNum);
+            double num1 = Double.parseDouble(num1TV.getText().toString());
+            double num2 = Double.parseDouble(num2TV.getText().toString());
+            String answer = String.valueOf((num1 + num2));
+            answerTV.setText(answer);
+            previewNum = "";
+            numState = false;
+    }
+        if(operator.equals("X")){
+            num2TV.setText(previewNum);
+            double num1 = Double.parseDouble(num1TV.getText().toString());
+            double num2 = Double.parseDouble(num2TV.getText().toString());
+            String answer = String.valueOf((num1 * num2));
+            answerTV.setText(answer);
+            previewNum = "";
+            numState = false;
+        }
+        if(operator.equals("/")){
+            num2TV.setText(previewNum);
+            double num1 = Double.parseDouble(num1TV.getText().toString());
+            double num2 = Double.parseDouble(num2TV.getText().toString());
+            String answer = String.valueOf((num1 / num2));
+            answerTV.setText(answer);
+            previewNum = "";
+            numState = false;
+        }
+        if(operator.equals("-")){
+            num2TV.setText(previewNum);
+            double num1 = Double.parseDouble(num1TV.getText().toString());
+            double num2 = Double.parseDouble(num2TV.getText().toString());
+            String answer = String.valueOf((num1 - num2));
+            answerTV.setText(answer);
+            previewNum = "";
+            numState = false;
+        }
     }
 
     public void numSelected(View v){
