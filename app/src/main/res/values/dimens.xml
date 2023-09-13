@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+
+<resources>
+    <dimen name="numpad">61dp</dimen>
+    <dimen name="longNum">166dp</dimen>
+</resources>

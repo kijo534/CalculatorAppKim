@@ -35,12 +35,6 @@ public class MainActivity extends AppCompatActivity {
             num2TV.setText("");
             opTV.setText("+");
         }
-        else{
-            num2TV.setText(previewNum);
-            previewNum = "";
-            numState = false;
-            answerTV.setText(previewNum);
-        }
 
 
     }
@@ -77,41 +71,43 @@ public class MainActivity extends AppCompatActivity {
 
     public void equals(View v){
         String operator = opTV.getText().toString();
-        if(operator.equals("+")){
-            num2TV.setText(previewNum);
-            double num1 = Double.parseDouble(num1TV.getText().toString());
-            double num2 = Double.parseDouble(num2TV.getText().toString());
-            String answer = String.valueOf((num1 + num2));
-            answerTV.setText(answer);
-            previewNum = "";
-            numState = false;
-    }
-        if(operator.equals("X")){
-            num2TV.setText(previewNum);
-            double num1 = Double.parseDouble(num1TV.getText().toString());
-            double num2 = Double.parseDouble(num2TV.getText().toString());
-            String answer = String.valueOf((num1 * num2));
-            answerTV.setText(answer);
-            previewNum = "";
-            numState = false;
-        }
-        if(operator.equals("/")){
-            num2TV.setText(previewNum);
-            double num1 = Double.parseDouble(num1TV.getText().toString());
-            double num2 = Double.parseDouble(num2TV.getText().toString());
-            String answer = String.valueOf((num1 / num2));
-            answerTV.setText(answer);
-            previewNum = "";
-            numState = false;
-        }
-        if(operator.equals("-")){
-            num2TV.setText(previewNum);
-            double num1 = Double.parseDouble(num1TV.getText().toString());
-            double num2 = Double.parseDouble(num2TV.getText().toString());
-            String answer = String.valueOf((num1 - num2));
-            answerTV.setText(answer);
-            previewNum = "";
-            numState = false;
+        if(numState == true) {
+            if (operator.equals("+")) {
+                num2TV.setText(previewNum);
+                double num1 = Double.parseDouble(num1TV.getText().toString());
+                double num2 = Double.parseDouble(num2TV.getText().toString());
+                String answer = String.valueOf((num1 + num2));
+                answerTV.setText(answer);
+                previewNum = "";
+                numState = false;
+            }
+            if (operator.equals("X")) {
+                num2TV.setText(previewNum);
+                double num1 = Double.parseDouble(num1TV.getText().toString());
+                double num2 = Double.parseDouble(num2TV.getText().toString());
+                String answer = String.valueOf((num1 * num2));
+                answerTV.setText(answer);
+                previewNum = "";
+                numState = false;
+            }
+            if (operator.equals("/")) {
+                num2TV.setText(previewNum);
+                double num1 = Double.parseDouble(num1TV.getText().toString());
+                double num2 = Double.parseDouble(num2TV.getText().toString());
+                String answer = String.valueOf((num1 / num2));
+                answerTV.setText(answer);
+                previewNum = "";
+                numState = false;
+            }
+            if (operator.equals("-")) {
+                num2TV.setText(previewNum);
+                double num1 = Double.parseDouble(num1TV.getText().toString());
+                double num2 = Double.parseDouble(num2TV.getText().toString());
+                String answer = String.valueOf((num1 - num2));
+                answerTV.setText(answer);
+                previewNum = "";
+                numState = false;
+            }
         }
     }
 

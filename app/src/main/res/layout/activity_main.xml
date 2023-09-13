@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/nineButton"
-        android:layout_width="61dp"
-        android:layout_height="61dp"
+        android:layout_width="@dimen/numpad"
+        android:layout_height="@dimen/numpad"
         android:onClick="numSelected"
         android:text="9"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,8 +23,8 @@
 
     <Button
         android:id="@+id/eightButton"
-        android:layout_width="61dp"
-        android:layout_height="61dp"
+        android:layout_width="@dimen/numpad"
+        android:layout_height="@dimen/numpad"
         android:onClick="numSelected"
         android:text="8"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,8 +36,8 @@
 
     <Button
         android:id="@+id/sevenButton"
-        android:layout_width="61dp"
-        android:layout_height="61dp"
+        android:layout_width="@dimen/numpad"
+        android:layout_height="@dimen/numpad"
         android:onClick="numSelected"
         android:text="7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +75,7 @@
 
     <Button
         android:id="@+id/zeroButton"
-        android:layout_width="166dp"
+        android:layout_width="@dimen/longNum"
         android:layout_height="61dp"
         android:onClick="numSelected"
         android:text="0"
@@ -120,10 +120,10 @@
         android:text="⌫"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.651"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.47" />
 
     <Button
         android:id="@+id/twoButton"
@@ -185,10 +185,10 @@
         android:text="="
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/divideButton"
